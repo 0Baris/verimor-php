@@ -1,0 +1,10 @@
+parameters:
+    level: 8
+    paths:
+        - src
+        - tests
+    excludePaths:
+        - src/*/Generated/*
+        - src/*/Dto/*.gen.php
+        - src/*/Service/*.gen.php
+        - src/*/RawApis.gen.php

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="Verimor PHP SDK">
+  <description>PSR-12 rules for the public Verimor PHP SDK.</description>
+  <file>src</file>
+  <file>tests</file>
+  <exclude-pattern>*/Generated/*</exclude-pattern>
+  <exclude-pattern>*.gen.php</exclude-pattern>
+  <rule ref="PSR12"/>
+</ruleset>
