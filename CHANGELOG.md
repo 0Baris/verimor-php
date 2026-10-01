@@ -11,7 +11,7 @@ Bu proje [Semantic Versioning](https://semver.org/) kullanır. / This project fo
 
 Çevrimdışı doğrulama (2026-10-01):
 
-- PHP 7.4, 8.0, 8.1, 8.2, 8.3, 8.4 ve 8.5 (`php:<sürüm>-cli-alpine`, Composer 2.8.12) üzerinde temiz `vendor/` ile `composer validate --strict`, `composer install`, `composer check` ve katı PHPUnit (`--fail-on-warning --fail-on-risky --fail-on-skipped --fail-on-incomplete`) geçti: 214 test, 1191 assertion.
+- PHP 7.4, 8.0, 8.1, 8.2, 8.3, 8.4 ve 8.5 (`php:<sürüm>-cli-alpine`, Composer 2.10.3) üzerinde temiz `vendor/` ile `composer validate --strict`, `composer install`, `composer check` ve katı PHPUnit (`--fail-on-warning --fail-on-risky --fail-on-skipped --fail-on-incomplete`) geçti: 214 test, 1191 assertion.
 - `tests/Integration/NetworkFailureTest.php` PHP 7.4 ve 8.5 üzerinde 10 kez üst üste geçti.
 - `scripts/build-archive.php` ile üretilen ZIP temiz bir consumer projesine kuruldu; SMS, Switch ve WhatsApp yerel sunucu çağrıları geçti.
 - Arşivde ve depoda üretici depo adı, OpenAPI şeması, özel yol ve credential bulunmadı; testler yalnız `127.0.0.1` kullanır.
@@ -26,7 +26,7 @@ Canlı Verimor servisi doğrulaması ve Packagist yayını henüz yapılmamışt
 
 Offline verification (2026-10-01):
 
-- On PHP 7.4, 8.0, 8.1, 8.2, 8.3, 8.4, and 8.5 (`php:<version>-cli-alpine`, Composer 2.8.12) with a clean `vendor/`, `composer validate --strict`, `composer install`, `composer check`, and strict PHPUnit (`--fail-on-warning --fail-on-risky --fail-on-skipped --fail-on-incomplete`) passed: 214 tests, 1191 assertions.
+- On PHP 7.4, 8.0, 8.1, 8.2, 8.3, 8.4, and 8.5 (`php:<version>-cli-alpine`, Composer 2.10.3) with a clean `vendor/`, `composer validate --strict`, `composer install`, `composer check`, and strict PHPUnit (`--fail-on-warning --fail-on-risky --fail-on-skipped --fail-on-incomplete`) passed: 214 tests, 1191 assertions.
 - `tests/Integration/NetworkFailureTest.php` passed 10 consecutive runs on PHP 7.4 and 8.5.
 - The ZIP built by `scripts/build-archive.php` installed into a clean consumer project; local-server calls for SMS, Switch, and WhatsApp passed.
 - No generator repository name, OpenAPI schema, private path, or credential was found in the archive or repository; tests use `127.0.0.1` only.
