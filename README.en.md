@@ -2,7 +2,7 @@
 
 [Türkçe](README.md)
 
-A PHP 7.4+ unofficial community SDK for the Verimor SMS, Switch, and WhatsApp APIs. It combines a stable hand-written client surface with a generated `raw()` layer covering all 68 OpenAPI operations.
+A PHP 7.4+ unofficial community SDK for the Verimor SMS, Switch, and WhatsApp APIs. It combines a stable hand-written client surface with a generated `raw()` layer covering all 72 OpenAPI operations.
 
 > This project is community-maintained and unofficial. It does not claim support or compatibility guarantees on behalf of Verimor.
 >
@@ -75,7 +75,7 @@ Use `sendUtility()` in the same way for utility templates. The documented succes
 - The SDK does not retry automatically. After `429`, timeouts, or `5xx`, delivery may be uncertain; a blind retry can cause duplicate delivery or calls.
 - HTTP failures are normalized as `VerimorApiException`, exposing `product()`, `operationId()`, `statusCode()`, and `body()`.
 - Connection, DNS, and timeout failures remain native Guzzle exception types.
-- All 68 operations are available through `raw()`. The raw layer exposes generated signatures and response models; prefer typed services when possible.
+- All 72 operations are available through `raw()`. The raw layer exposes generated signatures and response models; prefer typed services when possible.
 - The SDK has no rate limiter. Handle `429` using your queue, idempotency policy, and applicable Verimor limits.
 
 ## Documentation
@@ -83,7 +83,7 @@ Use `sendUtility()` in the same way for utility templates. The documented succes
 - [Installation](docs/en/installation.md) · [Configuration](docs/en/configuration.md)
 - [SMS](docs/en/sms.md) · [Switch](docs/en/switch.md) · [WhatsApp](docs/en/whatsapp.md)
 - [Errors](docs/en/errors.md) · [Raw API](docs/en/raw-api.md)
-- [Testing and safety](docs/en/testing-and-safety.md) · [68 operations](docs/en/operations.md)
+- [Testing and safety](docs/en/testing-and-safety.md) · [72 operations](docs/en/operations.md)
 
 No Laravel or Symfony integration package is required. Register configs and clients in your container as services or singletons; the clients are framework-neutral.
 

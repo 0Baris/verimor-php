@@ -55,7 +55,7 @@ final class DocumentationTest extends TestCase
         foreach (['tr', 'en'] as $language) {
             $operations = (string) file_get_contents($root . '/docs/' . $language . '/operations.md');
             preg_match_all('/^\| (sms|switch|whatsapp) \|/m', $operations, $matches);
-            self::assertCount(68, $matches[0], $language . ' operation rows');
+            self::assertCount(72, $matches[0], $language . ' operation rows');
         }
     }
 

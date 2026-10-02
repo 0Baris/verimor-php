@@ -26,6 +26,6 @@ $result = $whatsapp->sendUtility(SendUtilityRequest::fromArray([
 ]));
 ```
 
-Health işlemi `health()->health()`, message operasyonları `messages()` servisindedir. Tam generated erişim `raw()` üzerinden sağlanır.
+Health işlemi `health()->health()`, message operasyonları `messages()` servisindedir (`sendBulk()`, `listMessages()` ve `getMessage()` dahil). Tam generated erişim `raw()` üzerinden sağlanır.
 
 Template adı, dil ve parametre sırası Verimor hesabınızdaki onaylı template ile eşleşmelidir. `429`, timeout veya `5xx` sonrasında otomatik retry yoktur; mesaj daha önce kuyruğa alınmış olabileceği için tekrar göndermeden kendi idempotency kaydınızı kontrol edin.

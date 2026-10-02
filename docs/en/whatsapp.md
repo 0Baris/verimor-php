@@ -26,6 +26,6 @@ $result = $whatsapp->sendUtility(SendUtilityRequest::fromArray([
 ]));
 ```
 
-The health operation is available through `health()->health()`, message operations through `messages()`, and the full generated surface through `raw()`.
+The health operation is available through `health()->health()`, message operations through `messages()` (including `sendBulk()`, `listMessages()` and `getMessage()`), and the full generated surface through `raw()`.
 
 Template name, language, and parameter order must match an approved template on your account. There is no automatic retry after `429`, a timeout, or `5xx`; check your idempotency record before resending because the message may already be queued.

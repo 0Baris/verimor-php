@@ -2,7 +2,7 @@
 
 [English](README.en.md)
 
-Verimor SMS, Switch ve WhatsApp API'leri için PHP 7.4+ uyumlu, bağımsız topluluk SDK'sı. Paket; elle yazılmış, kararlı istemci yüzeyini OpenAPI'den üretilmiş 68 operasyonluk `raw()` katmanıyla birleştirir.
+Verimor SMS, Switch ve WhatsApp API'leri için PHP 7.4+ uyumlu, bağımsız topluluk SDK'sı. Paket; elle yazılmış, kararlı istemci yüzeyini OpenAPI'den üretilmiş 72 operasyonluk `raw()` katmanıyla birleştirir.
 
 > Bu proje topluluk tarafından sürdürülür ve resmî değildir. Verimor adına destek veya uyumluluk garantisi vermez.
 >
@@ -75,7 +75,7 @@ Utility şablonları için aynı biçimde `sendUtility()` kullanılır. OTP'nin 
 - SDK otomatik retry yapmaz. Özellikle `429`, timeout ve `5xx` sonrası isteğin sunucuya ulaşıp ulaşmadığı belirsiz olabilir; kör tekrar yinelenen gönderim veya çağrı oluşturabilir.
 - HTTP hataları `VerimorApiException` olarak normalize edilir; `product()`, `operationId()`, `statusCode()` ve `body()` ile incelenir.
 - Bağlantı, DNS ve timeout hataları Guzzle'ın yerel exception tipleriyle korunur.
-- Tüm 68 operasyon `raw()` üzerinden erişilebilir. Raw katman generated imzaları ve response modellerini açar; mümkün olduğunda typed servisleri tercih edin.
+- Tüm 72 operasyon `raw()` üzerinden erişilebilir. Raw katman generated imzaları ve response modellerini açar; mümkün olduğunda typed servisleri tercih edin.
 - SDK rate limiter içermez. `429` yanıtını iş kuyruğunuz, idempotency stratejiniz ve Verimor limitlerinizle yönetin.
 
 ## Belgeler
@@ -83,7 +83,7 @@ Utility şablonları için aynı biçimde `sendUtility()` kullanılır. OTP'nin 
 - [Kurulum](docs/tr/installation.md) · [Yapılandırma](docs/tr/configuration.md)
 - [SMS](docs/tr/sms.md) · [Switch](docs/tr/switch.md) · [WhatsApp](docs/tr/whatsapp.md)
 - [Hatalar](docs/tr/errors.md) · [Raw API](docs/tr/raw-api.md)
-- [Test ve güvenlik](docs/tr/testing-and-safety.md) · [68 operasyon](docs/tr/operations.md)
+- [Test ve güvenlik](docs/tr/testing-and-safety.md) · [72 operasyon](docs/tr/operations.md)
 
 Laravel ve Symfony için özel bağımlılık zorunlu değildir. Config ve client nesnelerini container'ınıza singleton/service olarak kaydedebilirsiniz; istemciler framework bağımsızdır.
 

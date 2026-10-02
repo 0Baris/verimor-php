@@ -1,6 +1,6 @@
 # Raw API
 
-Typed facade günlük kullanım içindir; `raw()` tüm 68 generated OpenAPI operasyonuna erişim sağlar:
+Typed facade günlük kullanım içindir; `raw()` tüm 72 generated OpenAPI operasyonuna erişim sağlar:
 
 ```php
 $raw = $sms->raw();
