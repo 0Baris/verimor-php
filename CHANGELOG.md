@@ -2,6 +2,13 @@
 
 Bu proje [Semantic Versioning](https://semver.org/) kullanır. / This project follows Semantic Versioning.
 
+## 0.2.1
+
+- Düzeltme: `SmsClient::balance()` ve `balances()->balance()` bakiyeyi döndürmüyor, `null` dönüyordu; artık API'nin gönderdiği metni döndürür.
+- Sunucu adresi açıklamaları netleşti: varsayılan Verimor'un adresidir; kendi sunucunuz veya proxy için değiştirilebilir, IP, port ve alt yol korunur (testle doğrulandı).
+- Fix: `SmsClient::balance()` and `balances()->balance()` returned `null` instead of the balance; they now return the text the API sends.
+- Server URL docs clarified: Verimor's address is the default and can be changed to your own server or proxy; an IP, a port and a path prefix are kept (now tested).
+
 ## 0.2.0
 
 - Verimor'un yeni operasyonları: SMS `campaigns()->sendOtp()` (`POST /v2/otp`); WhatsApp `messages()->sendBulk()`, `listMessages()` ve `getMessage()`. Kapsam 72 operasyon: SMS 14, Switch 52, WhatsApp 6.

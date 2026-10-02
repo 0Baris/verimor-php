@@ -27,7 +27,7 @@ final class BalancesService
         $this->defaults = $defaults;
     }
 
-    /** @return void */
+    /** @return string */
     public function balance()
     {
         try {

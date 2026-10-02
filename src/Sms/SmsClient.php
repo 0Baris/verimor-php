@@ -108,10 +108,10 @@ final class SmsClient
         return $this->campaigns->send($request);
     }
 
-    /** @return void */
+    /** @return string The balance exactly as the API sends it. */
     public function balance()
     {
-        $this->balances->balance();
+        return $this->balances->balance();
     }
 
     /** @return \BarisCemant\Verimor\Sms\Generated\Model\GetSmsStatus200ResponseInner[]|string */
