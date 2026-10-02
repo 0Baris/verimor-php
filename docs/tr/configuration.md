@@ -14,7 +14,7 @@ Constructor sırası:
 - `SwitchConfig(apiKey, baseUrl?, timeout?)`
 - `WhatsAppConfig(apiKey, baseUrl?, timeout?)`
 
-Varsayılan timeout 30 saniyedir. Timeout pozitif `float` olmalıdır. `baseUrl` verilmezse ürünün varsayılan HTTPS adresi kullanılır; test/staging için mutlak `http://` veya `https://` URL verilebilir. Sonundaki `/` normalize edilir.
+Varsayılan timeout 30 saniyedir. Timeout pozitif `float` olmalıdır. `baseUrl` verilmezse ürünün Verimor adresi kullanılır. Proxy veya test sunucusu gibi başka bir sunucu için mutlak bir `http://` ya da `https://` adresi verin; IP, port ve alt yol korunur, sondaki `/` normalize edilir.
 
 ## Dependency injection
 

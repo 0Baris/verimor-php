@@ -14,7 +14,7 @@ Constructor order:
 - `SwitchConfig(apiKey, baseUrl?, timeout?)`
 - `WhatsAppConfig(apiKey, baseUrl?, timeout?)`
 
-The default timeout is 30 seconds and must be a positive `float`. Omitting `baseUrl` uses the product's default HTTPS endpoint. Tests and staging can provide an absolute `http://` or `https://` URL; trailing slashes are normalized.
+The default timeout is 30 seconds and must be a positive `float`. Omitting `baseUrl` uses Verimor's address for the product. Set it to an absolute `http://` or `https://` URL to use another server, such as a proxy or a test server; an IP, a port and a path prefix are kept and trailing slashes are normalized.
 
 ## Dependency injection
 
