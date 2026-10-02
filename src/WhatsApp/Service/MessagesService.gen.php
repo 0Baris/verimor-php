@@ -9,6 +9,9 @@ namespace BarisCemant\Verimor\WhatsApp\Service;
 use BarisCemant\Verimor\Http\ErrorMapper;
 use BarisCemant\Verimor\WhatsApp\Generated\Api\MessagesApi;
 use BarisCemant\Verimor\WhatsApp\Generated\ApiException;
+use BarisCemant\Verimor\WhatsApp\Dto\GetMessageRequest;
+use BarisCemant\Verimor\WhatsApp\Dto\ListMessagesRequest;
+use BarisCemant\Verimor\WhatsApp\Dto\SendBulkRequest;
 use BarisCemant\Verimor\WhatsApp\Dto\SendOtpRequest;
 use BarisCemant\Verimor\WhatsApp\Dto\SendUtilityRequest;
 
@@ -28,6 +31,38 @@ final class MessagesService
         $this->defaults = $defaults;
     }
 
+    /** @return \BarisCemant\Verimor\WhatsApp\Generated\Model\MessageDetailResponse|\BarisCemant\Verimor\WhatsApp\Generated\Model\HTTPValidationError */
+    public function getMessage(GetMessageRequest $request)
+    {
+        $input = $request->toArray();
+        try {
+            return $this->api->getMessageV1MessagesMessageRefGet($request->messageRef(), $this->credentials["x-api-key"]);
+        } catch (ApiException $exception) {
+            throw ErrorMapper::map("whatsapp", "get_message_v1_messages__message_ref__get", $exception);
+        }
+    }
+    /** @return \BarisCemant\Verimor\WhatsApp\Generated\Model\MessageListResponse|\BarisCemant\Verimor\WhatsApp\Generated\Model\HTTPValidationError */
+    public function listMessages(ListMessagesRequest $request)
+    {
+        $input = $request->toArray();
+        try {
+            return $this->api->listMessagesV1MessagesGet($request->to(), $request->waMessageId(), $request->status(), $request->category(), $request->templateName(), $request->since(), $request->until(), $request->limit(), $request->offset(), $this->credentials["x-api-key"]);
+        } catch (ApiException $exception) {
+            throw ErrorMapper::map("whatsapp", "list_messages_v1_messages_get", $exception);
+        }
+    }
+    /** @return \BarisCemant\Verimor\WhatsApp\Generated\Model\MessageResponse|\BarisCemant\Verimor\WhatsApp\Generated\Model\HTTPValidationError */
+    public function sendBulk(SendBulkRequest $request)
+    {
+        $input = $request->toArray();
+        $body = $input;
+        $bodyModel = new \BarisCemant\Verimor\WhatsApp\Generated\Model\BulkMessageRequest($body);
+        try {
+            return $this->api->sendBulkV1MessagesBulkPost($bodyModel, $this->credentials["x-api-key"]);
+        } catch (ApiException $exception) {
+            throw ErrorMapper::map("whatsapp", "send_bulk_v1_messages_bulk_post", $exception);
+        }
+    }
     /** @return \BarisCemant\Verimor\WhatsApp\Generated\Model\MessageResponse|\BarisCemant\Verimor\WhatsApp\Generated\Model\HTTPValidationError */
     public function sendOtp(SendOtpRequest $request)
     {

@@ -17,7 +17,8 @@ final class ReleaseMetadataTest extends TestCase
 
     public function testVersionGuardAcceptsMatchingStableTag(): void
     {
-        [$status, $output] = $this->runGuard('v0.1.0');
+        $version = trim((string) file_get_contents(dirname(__DIR__, 2) . '/VERSION'));
+        [$status, $output] = $this->runGuard('v' . $version);
         self::assertSame(0, $status, $output);
     }
 

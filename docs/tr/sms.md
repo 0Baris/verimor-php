@@ -39,7 +39,7 @@ $byCustomId = $sms->statusByCustomId('siparis-42');
 
 ## Diğer alanlar
 
-- `campaigns()`: gönderim, legacy gönderim, iptal
+- `campaigns()`: gönderim, legacy gönderim, OTP (`sendOtp()`), iptal
 - `balances()`: bakiye
 - `reports()`: durum ve gelen mesajlar
 - `senderIds()`: tanımlı başlıklar

@@ -1,6 +1,6 @@
 # Raw API
 
-The typed facade is intended for normal use, while `raw()` exposes all 68 generated OpenAPI operations:
+The typed facade is intended for normal use, while `raw()` exposes all 72 generated OpenAPI operations:
 
 ```php
 $raw = $sms->raw();

@@ -1,6 +1,6 @@
 # PHP SDK operations
 
-This table lists the public PHP proxy for all 68 normalized Verimor operations.
+This table lists the public PHP proxy for all 72 normalized Verimor operations.
 
 | Product | HTTP | Path | Operation ID | PHP proxy |
 | --- | --- | --- | --- | --- |
@@ -11,6 +11,7 @@ This table lists the public PHP proxy for all 68 normalized Verimor operations.
 | sms | `POST` | `/v2/cancel/{id}` | `post_v2_cancel_id` | `campaigns.cancel` |
 | sms | `POST` | `/v2/send.json` | `sendSmsJson` | `campaigns.send` |
 | sms | `GET` | `/v2/send` | `get_v2_send` | `campaigns.sendLegacy` |
+| sms | `POST` | `/v2/otp` | `sendOtp` | `campaigns.sendOtp` |
 | sms | `GET` | `/v2/iys/campaigns/{id}/consents` | `get_v2_iys_campaigns_id_consents` | `iys.listIysCampaignConsents` |
 | sms | `GET` | `/v2/iys/campaigns` | `get_v2_iys_campaigns` | `iys.listIysCampaigns` |
 | sms | `POST` | `/v2/iys_consents.json` | `post_v2_iys_consents_json` | `iys.submitIysConsents` |
@@ -70,5 +71,8 @@ This table lists the public PHP proxy for all 68 normalized Verimor operations.
 | switch | `GET` | `/user_statuses` | `listUserStatuses` | `users.listUserStatuses` |
 | switch | `GET` | `/dnd/{id}` | `createDnd` | `users.setDnd` |
 | whatsapp | `GET` | `/health` | `health_health_get` | `health.health` |
+| whatsapp | `GET` | `/v1/messages/{message_ref}` | `get_message_v1_messages__message_ref__get` | `messages.getMessage` |
+| whatsapp | `GET` | `/v1/messages` | `list_messages_v1_messages_get` | `messages.listMessages` |
+| whatsapp | `POST` | `/v1/messages/bulk` | `send_bulk_v1_messages_bulk_post` | `messages.sendBulk` |
 | whatsapp | `POST` | `/v1/messages/otp` | `send_otp_v1_messages_otp_post` | `messages.sendOtp` |
 | whatsapp | `POST` | `/v1/messages/utility` | `send_utility_v1_messages_utility_post` | `messages.sendUtility` |

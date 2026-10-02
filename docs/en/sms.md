@@ -39,7 +39,7 @@ $byCustomId = $sms->statusByCustomId('order-42');
 
 ## Other domains
 
-- `campaigns()`: send, legacy send, and cancel
+- `campaigns()`: send, legacy send, OTP (`sendOtp()`), and cancel
 - `balances()`: balance
 - `reports()`: status and inbound messages
 - `senderIds()`: configured sender IDs

@@ -11,6 +11,7 @@ use BarisCemant\Verimor\Sms\Generated\Api\SmsKampanyasiApi;
 use BarisCemant\Verimor\Sms\Generated\ApiException;
 use BarisCemant\Verimor\Sms\Dto\CancelRequest;
 use BarisCemant\Verimor\Sms\Dto\SendLegacyRequest;
+use BarisCemant\Verimor\Sms\Dto\SendOtpRequest;
 use BarisCemant\Verimor\Sms\Dto\SendRequest;
 
 final class CampaignsService
@@ -68,6 +69,20 @@ final class CampaignsService
             return $this->api->getV2Send($this->credentials["username"], $this->credentials["password"], $request->dest(), $request->msg(), ($request->sourceAddr() !== null ? $request->sourceAddr() : ($this->defaults["source_addr"] ?? null)), $request->validFor(), $request->datacoding(), $request->isCommercial(), $request->iysRecipientType(), $request->sendAt());
         } catch (ApiException $exception) {
             throw ErrorMapper::map("sms", "get_v2_send", $exception);
+        }
+    }
+    /** @return string|string|string|string */
+    public function sendOtp(SendOtpRequest $request)
+    {
+        $input = $request->toArray();
+        $body = $input;
+        $body["password"] = $this->credentials["password"];
+        $body["username"] = $this->credentials["username"];
+        $bodyModel = new \BarisCemant\Verimor\Sms\Generated\Model\OtpRequest($body);
+        try {
+            return $this->api->sendOtp($bodyModel);
+        } catch (ApiException $exception) {
+            throw ErrorMapper::map("sms", "sendOtp", $exception);
         }
     }
 }

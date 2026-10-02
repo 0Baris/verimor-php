@@ -2,6 +2,11 @@
 
 Bu proje [Semantic Versioning](https://semver.org/) kullanır. / This project follows Semantic Versioning.
 
+## 0.2.0
+
+- Verimor'un yeni operasyonları: SMS `campaigns()->sendOtp()` (`POST /v2/otp`); WhatsApp `messages()->sendBulk()`, `listMessages()` ve `getMessage()`. Kapsam 72 operasyon: SMS 14, Switch 52, WhatsApp 6.
+- Verimor's new operations: SMS `campaigns()->sendOtp()` (`POST /v2/otp`); WhatsApp `messages()->sendBulk()`, `listMessages()` and `getMessage()`. Coverage is 72 operations: 14 SMS, 52 Switch, 6 WhatsApp.
+
 ## 0.1.0 - Yayın adayı / Release candidate
 
 - PHP 7.4+ için SMS, Switch ve WhatsApp istemcileri.

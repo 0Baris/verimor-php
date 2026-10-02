@@ -71,9 +71,9 @@ final class OperationMatrixTest extends TestCase
         foreach ($operations as $operation) {
             ++$counts[$operation['product']];
         }
-        self::assertCount(68, $operations);
-        self::assertSame(['sms' => 13, 'switch' => 52, 'whatsapp' => 3], $counts);
-        self::assertCount(68, array_unique(array_column($operations, 'operationId')));
-        self::assertCount(68, array_unique(array_column($operations, 'proxy')));
+        self::assertCount(72, $operations);
+        self::assertSame(['sms' => 14, 'switch' => 52, 'whatsapp' => 6], $counts);
+        self::assertCount(72, array_unique(array_column($operations, 'operationId')));
+        self::assertCount(72, array_unique(array_column($operations, 'proxy')));
     }
 }
