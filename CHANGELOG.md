@@ -2,6 +2,15 @@
 
 Bu proje [Semantic Versioning](https://semver.org/) kullanır. / This project follows Semantic Versioning.
 
+## 0.3.0
+
+- 72 operasyonun her biri için çalıştırılabilir örnek: `examples/operations/<ürün>/<operasyon>.php`. Örnekler sözleşmeden üretilir; CI hepsini Verimor'a bağlanmadan yerel bir kayıt sunucusuna karşı çalıştırıp her birinin belgelenen isteği gönderdiğini doğrular (`scripts/run_examples.py php`).
+- Yapay zekâ asistanları için tek dosyalık başvuru: `llms.md` (kurulum, kimlik doğrulama, sunucu adresi, hatalar ve her operasyonun çağrısı).
+- Düzeltme: `SubmitIysConsentsRequest` artık `sourceAddr` istemez; verilmezse yapılandırmadaki varsayılan gönderici kullanılır. Ne istekte ne yapılandırmada gönderici yoksa istek gönderilmeden `InvalidArgumentException` atılır.
+- Runnable example for each of the 72 operations: `examples/operations/<product>/<operation>.php`. The examples are generated from the contract; CI runs every one against a local recording server, without contacting Verimor, and checks each sends the documented request (`scripts/run_examples.py php`).
+- A single-file reference for AI assistants: `llms.md` (install, authentication, server address, errors and the call for every operation).
+- Fix: `SubmitIysConsentsRequest` no longer requires `sourceAddr`; when it is left out the configured default sender is used. With no sender in the request or the configuration it throws `InvalidArgumentException` before sending.
+
 ## 0.2.1
 
 - Düzeltme: `SmsClient::balance()` ve `balances()->balance()` bakiyeyi döndürmüyor, `null` dönüyordu; artık API'nin gönderdiği metni döndürür.

@@ -78,6 +78,12 @@ Utility şablonları için aynı biçimde `sendUtility()` kullanılır. OTP'nin 
 - Tüm 72 operasyon `raw()` üzerinden erişilebilir. Raw katman generated imzaları ve response modellerini açar; mümkün olduğunda typed servisleri tercih edin.
 - SDK rate limiter içermez. `429` yanıtını iş kuyruğunuz, idempotency stratejiniz ve Verimor limitlerinizle yönetin.
 
+## Örnekler
+
+72 operasyonun her biri için çalıştırılabilir bir örnek [`examples/operations/`](examples/operations/) altındadır, ör. `php examples/operations/sms/send.php`. Her dosya kimlik bilgilerini ortam değişkenlerinden, sunucu adresini `VERIMOR_BASE_URL` değişkeninden okur; değişken yoksa Verimor'un sunucusuna gider. `scripts/run_examples.py` hepsini Verimor'a hiç bağlanmadan yerel bir kayıt sunucusuna karşı çalıştırır.
+
+Yapay zekâ asistanları için tek dosyalık başvuru: [`llms.md`](llms.md).
+
 ## Belgeler
 
 - [Kurulum](docs/tr/installation.md) · [Yapılandırma](docs/tr/configuration.md)

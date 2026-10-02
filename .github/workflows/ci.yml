@@ -31,6 +31,7 @@ jobs:
       - run: >-
           vendor/bin/phpunit --fail-on-warning --fail-on-risky
           --fail-on-skipped --fail-on-incomplete
+      - run: python3 scripts/run_examples.py php
 
   package-consumer:
     needs: [quality]

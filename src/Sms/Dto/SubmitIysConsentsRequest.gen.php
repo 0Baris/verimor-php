@@ -9,11 +9,11 @@ namespace BarisCemant\Verimor\Sms\Dto;
 final class SubmitIysConsentsRequest
 {
     private array $consents;
-    private string $sourceAddr;
+    private ?string $sourceAddr;
 
     public function __construct(
         array $consents,
-        string $sourceAddr
+        ?string $sourceAddr = null
     ) {
         $this->consents = $consents;
         $this->sourceAddr = $sourceAddr;
@@ -27,9 +27,6 @@ final class SubmitIysConsentsRequest
         }
         if (!array_key_exists('consents', $data)) {
             throw new \InvalidArgumentException('SubmitIysConsentsRequest requires consents');
-        }
-        if (!array_key_exists('sourceAddr', $data)) {
-            throw new \InvalidArgumentException('SubmitIysConsentsRequest requires sourceAddr');
         }
         return new self(
             $data['consents'] ?? null,
@@ -51,7 +48,7 @@ final class SubmitIysConsentsRequest
     {
         return $this->consents;
     }
-    public function sourceAddr(): string
+    public function sourceAddr(): ?string
     {
         return $this->sourceAddr;
     }
