@@ -59,6 +59,9 @@ final class IysService
         if (!array_key_exists("sourceAddr", $body) && array_key_exists("source_addr", $this->defaults)) {
             $body["sourceAddr"] = $this->defaults["source_addr"];
         }
+        if (!array_key_exists("sourceAddr", $body)) {
+            throw new \InvalidArgumentException('SubmitIysConsentsRequest requires sourceAddr or a configured default');
+        }
         $bodyModel = new \BarisCemant\Verimor\Sms\Generated\Model\PostV2IysConsentsJsonRequest($body);
         try {
             return $this->api->postV2IysConsentsJson($bodyModel);

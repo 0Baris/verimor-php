@@ -78,6 +78,12 @@ Use `sendUtility()` in the same way for utility templates. The documented succes
 - All 72 operations are available through `raw()`. The raw layer exposes generated signatures and response models; prefer typed services when possible.
 - The SDK has no rate limiter. Handle `429` using your queue, idempotency policy, and applicable Verimor limits.
 
+## Examples
+
+Every one of the 72 operations has a runnable example under [`examples/operations/`](examples/operations/), e.g. `php examples/operations/sms/send.php`. Each file reads credentials from environment variables and the server from `VERIMOR_BASE_URL`, falling back to Verimor's server. `scripts/run_examples.py` runs all of them against a local recording server and never contacts Verimor.
+
+A single-file reference for AI assistants: [`llms.md`](llms.md).
+
 ## Documentation
 
 - [Installation](docs/en/installation.md) · [Configuration](docs/en/configuration.md)
